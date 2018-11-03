@@ -11,19 +11,10 @@ four million, find the sum of the even-valued terms.
 """
 
 def fibonacci_numbers():
-    result = 1
-    first, second = 1, 2
-    flag = True
-    # for i in range(10):
-    #     print(first)
-    while flag:
-        print([second, result])
-        if second > 4000000:
-            print(result)
-            return  result
+    first, second = 0, 1
+    ls_second = []
+
+    while second < 4000000:
         first, second = second, first + second
-        result += second
-        # result += second
-
-
-print(fibonacci_numbers())
+        if not second % 2: ls_second.append(second)
+    return sum(ls_second)
